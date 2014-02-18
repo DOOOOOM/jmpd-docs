@@ -41,7 +41,11 @@ The daemon shall listen on a predefined port for commands from any connected cli
 
 **2.4 Play Queue**
 
-Internally, jMPD shall implement a playlist workspace called the Play Queue. This play queue will allow the user to quickly construct playlists. All music playback shall happen from this play queue.
+Internally, jMPD shall implement a playlist workspace called the Play Queue. This play queue will allow the user to quickly construct playlists. All music playback shall happen from this play queue. The daemon shall implement the following commands to manipulate the play queue:
+* Add track to the end of the play queue
+* Insert track at a specified position in the play queue
+* Remove track from play queue
+* Clear all tracks from the play queue
 
 **2.5 Playlists**
 
@@ -61,7 +65,13 @@ The interface shall allow for controls as follows:
     * previous track
     * next track
     * volume control
+* play queue controls
+    * Add track to end
+    * Insert track at position
+    * Remove track
+    * Clear all tracks
 
+Keyboard shortcuts will be implemented for these commands. 
 The interface will combine the pause and play buttons into a single toggle button; displaying the opposite symbol or text of the current play state.
 
 **3.2 Displayed Information**
