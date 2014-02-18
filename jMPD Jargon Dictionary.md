@@ -5,7 +5,7 @@ jMPD Jargon Dictionary
 
 **scrobbling**: Users of Last.fm, a music website, can have a record of the music they listen to stored to their online profile. This process is called "scrobbling". Last.fm uses this information to suggest similar artists that may interest the user, notify them of new releases, and nearby concerts.
 
-*filesystem path**: The information an operating system uses to locate a folder on the computer. Typical music folder paths would be "C:\Users\Owner\Music" for Windows, or "/home/user/music" for Unix-like operating systems.
+**filesystem path**: The information an operating system uses to locate a folder on the computer. Typical music folder paths would be "C:\Users\Owner\Music" for Windows, or "/home/user/music" for Unix-like operating systems.
 
 **IP address**: The information a program uses to locate a website, another program, or computer on a network. IP stands for "Internet Protocol". For our purposes, the most common IP address will be 127.0.0.1, also called "localhost".
 
