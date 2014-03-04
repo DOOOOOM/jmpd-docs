@@ -575,3 +575,56 @@ None
 None
 
 ---
+
+**Use Case 12: UserCreatesNewPlaylist**
+
+**Overview:**
+
+Allows user to create a playlist.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The database is accessible.
+3. The jMPC is connected to jMPD on the same configured port.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User clicks on the Add New Playlist button in the left pane. | 1. Client opens a text entry view
+2. User types in a string of characters for the name of the playlist. | 2. Client echos their input in the text entry box.
+3. User presses enter, or clicks the "Done" button | 3. Client sends the "new" command to the daemon along with the user string.
+4. | 4. Server recieves command message.
+5. | 5. Server parses command message, extracts "new" command and the playlist name string.
+6. | 6. Server creates an empty playlist in the predefined playlist directory with the given name, returns "done" message to the client. 
+7. | 7. Client displays the new entry in the left pane, under the Playlist header.
+
+**Scenario Notes:**
+
+Until the user enters text, the "Done" button will be greyed out.
+
+**Post Conditions:**
+
+1. The client GUI displays the information requested by the user.
+
+**Exceptions:**
+
+1. The daemon is not running.
+2. The client is not connected to the same port as jMPD.
+3. The user string matches a playlist that already exists. Displays error message, allows the user to retry.
+
+**Required GUI:**
+
+1. jMPC_Text_Entry_View
+2. jMPC_Library_View or jMPC_Play_Queue_View
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
