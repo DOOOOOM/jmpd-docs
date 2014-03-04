@@ -924,7 +924,7 @@ Action | Software Reaction
 
 **Scenario Notes:**
 
-If the "Cancel" button is instead pressed, the config file is left unchanged.
+The configuration view may also contain checkboxes, which control togglable settings such as "Cache Retrieved album art". If the "Cancel" button is instead pressed, the config file is left unchanged.
 
 **Post Conditions:**
 
