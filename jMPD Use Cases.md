@@ -587,6 +587,7 @@ Allows user to create a playlist.
 1. The jMPD is listening on the configured port.
 2. The database is accessible.
 3. The jMPC is connected to jMPD on the same configured port.
+4. The playlist directory is writable.
 
 **Scenario:**
 
@@ -640,6 +641,7 @@ Allows user to delete a playlist.
 1. The jMPD is listening on the configured port.
 2. The database is accessible.
 3. The jMPC is connected to jMPD on the same configured port.
+4. The playlist directory is writable.
 
 **Scenario:**
 
@@ -670,6 +672,116 @@ None
 
 1. jMPC_Main_View
 2. jMPC_Playlist_Context_Menu
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
+
+**Use Case 14: UserAddsToPlaylist**
+
+**Overview:**
+
+Allows user to add tracks to a playlist.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The database is accessible.
+3. The jMPC is connected to jMPD on the same configured port.
+4. The playlist directory is writable.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User clicks on a track entry in the library view. | 1. Client highlights the track entry with a contrasting background color.
+2. User presses the 'p' key. | 2. Client opens a list view that displays the existing playlists.
+3. User clicks the desired playlist entry. | 2. highlights the playlist entry with a contrasting background color.
+4. User presses enter, or clicks the "Done" button | 3. Client sends the "addp" command, the playlist name and the track id in an array to the daemon.
+5. | 3. Server recieves command message.
+6. | 4. Server parses command message, extracts "addp" command, the playlist name and song id array.
+7. | 5. Server adds specified track to the specified playlist, returns the updated playlist information.
+8. | 6. Client updates the GUI representation of the playlist to reflect the changes.
+
+**Scenario Notes:**
+
+The user is allowed to multi-select tracks in the library. They will be placed into the playlist in ascending id order.
+
+**Post Conditions:**
+
+1. The client GUI displays the information requested by the user.
+
+**Exceptions:**
+
+1. The daemon is not running.
+2. The client is not connected to the same port as jMPD.
+3. The playlist directory is not writable.
+
+**Required GUI:**
+
+1. jMPC_Library_View
+2. jMPC_Playlist_Select_View
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
+
+**Use Case 15: UserRemovesFromPlaylist**
+
+**Overview:**
+
+Allows user to remove tracks from a playlist.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The database is accessible.
+3. The jMPC is connected to jMPD on the same configured port.
+4. The playlist directory is writable.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User clicks on a playlist in the left pane. | 1. Client highlights the playlist entry with a contrasting background color and opens the playlist in a jMPC_Play_Queue_View.
+2. User clicks the desired track entry. | 2. highlights the track entry with a contrasting background color.
+3. User presses the 'd' key. | 3. Client sends the "removep" command, the playlist name and the track id in an array to the daemon.
+3. | 3. Server recieves command message.
+4. | 4. Server parses command message, extracts "removep" command, the playlist name and song id array.
+5. | 5. Server removes the specified track from the specified playlist, returns the updated playlist information.
+6. | 6. Client updates the GUI representation of the playlist to reflect the changes.
+
+**Scenario Notes:**
+
+The user is allowed to multi-select tracks in the playlist. They will all be removed from the playlist.
+
+**Post Conditions:**
+
+1. The client GUI displays the updated playlist information.
+2. The playlist file no longer contains the deleted entries.
+
+**Exceptions:**
+
+1. The daemon is not running.
+2. The client is not connected to the same port as jMPD.
+3. The playlist directory is not writable.
+
+**Required GUI:**
+
+1. jMPC_Main_View
+2. jMPC_Play_Queue_View
 
 **Use Cases Utilized:**
 
