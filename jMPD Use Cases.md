@@ -628,3 +628,55 @@ None
 None
 
 ---
+
+**Use Case 13: UserDeletesPlaylist**
+
+**Overview:**
+
+Allows user to delete a playlist.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The database is accessible.
+3. The jMPC is connected to jMPD on the same configured port.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User right clicks on a playlist entry in the left pane. | 1. Client opens a context menu for playlist.
+2. User clicks "Delete" context menu item. | 2. Client sends the "delete" command to the daemon, along with the playlist name.
+3. | 3. Server recieves command message.
+4. | 4. Server parses command message, extracts "delete" command and the playlist name string.
+5. | 5. Server finds the playlist with the given name, deletes it, and returns "done" message to the client. 
+6. | 6. Client removes the corresponding playlist entry from the left pane.
+
+**Scenario Notes:**
+
+None
+
+**Post Conditions:**
+
+1. The client GUI displays the information requested by the user.
+
+**Exceptions:**
+
+1. The daemon is not running.
+2. The client is not connected to the same port as jMPD.
+3. The playlist directory is not writable.
+
+**Required GUI:**
+
+1. jMPC_Main_View
+2. jMPC_Playlist_Context_Menu
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
