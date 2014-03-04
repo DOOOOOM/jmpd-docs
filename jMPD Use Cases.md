@@ -16,7 +16,7 @@ Allows user to pause or play music playback.
 **Scenario:**
 |:               Action               :|:                 Software Reaction                :|
 |--------------------------------------|----------------------------------------------------|
-|1. User clicks playback toggle button | 1. Client sends "toggle" command to jMPD over port.|
-|                                      | 2. Server recieves command packet.                 |
-|                                      | 3. Server parses command.                          |
-|                                      | 4. Server executes command.                        |
+| User clicks playback toggle button   | Client sends "toggle" command to jMPD over port.|
+|                                      | Server recieves command packet.                 |
+|                                      | Server parses command.                          |
+|                                      | Server executes command.                        |
