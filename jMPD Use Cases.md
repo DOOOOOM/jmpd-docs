@@ -380,3 +380,53 @@ None
 
 ---
 
+**Use Case 8: UserClearsPlayQueue**
+
+**Overview:**
+
+Allows user to remove all tracks from the play queue.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The database is accessible.
+3. The jMPC is connected to jMPD on the same configured port.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User clicks on a track in the play queue. | 1. Client highlights the track entry with a contrasting background color.
+2. User presses the 'c' key. | 2. Client sends the "clear" command to the daemon.
+3. | 3. Server recieves command message.
+4. | 4. Server parses command message, extracts "clear" command.
+5. | 5. Server removes removes all tracks from the play queue, returns the updated play queue information.
+6. | 6. Client updates the jMPC_Play_Queue_View to reflect the changes.
+
+**Scenario Notes:**
+
+If the play queue is empty, the client does not send the clear command.
+
+**Post Conditions:**
+
+1. The daemon's play queue no longer contains any tracks.
+2. The client's GUI reflects the changes in the play queue.
+
+**Exceptions:**
+
+1. The daemon is not running
+2. The client is not connected to the same port as jMPD. 
+
+**Required GUI:**
+
+1. jMPC_Main_View
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
