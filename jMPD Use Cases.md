@@ -430,3 +430,101 @@ None
 None
 
 ---
+
+**Use Case 9: UserRaisesVolume**
+
+**Overview:**
+
+Allows user to raise the the volume.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The jMPC is connected to jMPD on the same configured port.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User presses the '+' key | 1. Client sends the "raise" command to the daemon.
+2. | 2. Server recieves command message.
+3. | 3. Server parses command message, extracts "raise" command.
+4. | 4. Server raises its output volume.
+5. | 5. The client updates the displayed volume in the jMPC_Main_View
+
+**Scenario Notes:**
+
+If the volume is currently at 100%, the client will not send the message.
+
+**Post Conditions:**
+
+1. The daemon's volume level is raised.
+2. The client's GUI reflects the changes to the volume level.
+
+**Exceptions:**
+
+1. The daemon is not running
+2. The client is not connected to the same port as jMPD. 
+
+**Required GUI:**
+
+1. jMPC_Main_View
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
+
+**Use Case 10: UserLowersVolume**
+
+**Overview:**
+
+Allows user to lower the the volume.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The jMPC is connected to jMPD on the same configured port.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User presses the '-' key | 1. Client sends the "lower" command to the daemon.
+2. | 2. Server recieves command message.
+3. | 3. Server parses command message, extracts "lower" command.
+4. | 4. Server lowers its output volume.
+5. | 5. The client updates the displayed volume in the jMPC_Main_View
+
+**Scenario Notes:**
+
+If the volume is currently at 0%, the client will not send the message.
+
+**Post Conditions:**
+
+1. The daemon's volume level is lowered.
+2. The client's GUI reflects the changes to the volume level.
+
+**Exceptions:**
+
+1. The daemon is not running
+2. The client is not connected to the same port as jMPD. 
+
+**Required GUI:**
+
+1. jMPC_Main_View
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
