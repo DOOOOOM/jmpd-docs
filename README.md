@@ -1,1 +1,2 @@
-***Documentation for the jMPD project***
+Documentation for the jMPD project
+==================================
