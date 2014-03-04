@@ -8,6 +8,7 @@ jMPD/C Use Cases
 Allows user to pause or play music playback.
 
 **Preconditions:**
+
 1. The jMPD is listening on the configured port.
 2. The database is accessible.
 3. The jMPC is connected to jMPD on the same configured port.
