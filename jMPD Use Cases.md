@@ -528,3 +528,50 @@ None
 None
 
 ---
+
+**Use Case 11: UserBrowsesLibrary**
+
+**Overview:**
+
+Allows user to lower the the volume.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The database is accessible.
+3. The jMPC is connected to jMPD on the same configured port.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User clicks on an artist name in the library view. | 1. Client highlights the artist entry with a contrasting background color, and loads that artist's albums in the album pane.
+2. User clicks on an album name in the library pane. | 2. Client highlights the album entry with a contrasting background color, and loads that album's list of tracks in the song pane.
+
+**Scenario Notes:**
+
+None
+
+**Post Conditions:**
+
+1. The client GUI displays the information requested by the user.
+
+**Exceptions:**
+
+1. The daemon is not running.
+2. The client is not connected to the same port as jMPD. 
+
+**Required GUI:**
+
+1. jMPC_Main_View
+2. jMPC_Library_View
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
