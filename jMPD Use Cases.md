@@ -210,3 +210,60 @@ None
 **Timing Constraints:**
 
 None
+
+---
+
+**Use Case 5: UserUpdatesDatabase**
+
+**Overview:**
+
+Allows user to manually trigger an update of the jMPD database through the client GUI. Effectively lets the user add new songs to the library without restarting the client.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The database is accessible.
+3. The jMPC is connected to jMPD on the same configured port.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User clicks "daemon" menu bar entry | 1. Client populates and expands the daemon menu.
+2. User points cursor to the "update" item | 2. Client highlights the item with a contrasting background color.
+3. User clicks "update" item | 3. Client sends "update" command to jMPD over port.
+4. | 4. Server recieves command packet.
+5. | 5. Server parses command packet, extracts "update" command.
+6. | 6. Server rescans the configured music directory, returns the new/removed database entries to the client.
+7. | 7. Client updates the library view to reflect the database changes.
+
+**Scenario Notes:**
+
+If the server returns and empty list in step 6, the client does nothing.
+
+**Post Conditions:**
+
+1. The daemon's database has been changed to reflect the changes to the music directory.
+2. The client's GUI reflects the changes in the database.
+
+**Exceptions:**
+
+1. The database cannot be accessed
+2. The music directory cannot be accessed
+3. The daemon is not running
+4. The client is not connected to the same port as jMPD. 
+
+**Required GUI:**
+
+1. jMPC_Main_View
+2. jMPC_Menu_Bar
+3. jMPC_Menu_Daemon_Entry
+4. jMPC_Library_View
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
