@@ -19,8 +19,8 @@ Action | Software Reaction
 ------ | -----------------
 1. User clicks playback toggle button | 1. Client sends "toggle" command to jMPD over port.
 2. | 2. Client toggles button icon.
-3. | 3. Server recieves command packet.
-4. | 4. Server parses command packet, extracts "toggle" command.
+3. | 3. Server recieves command message.
+4. | 4. Server parses command message, extracts "toggle" command.
 5. | 5. Server executes command.
 
 **Scenario Notes:**
@@ -71,12 +71,12 @@ Allows user to skip forward to the next track in the play queue.
 Action | Software Reaction 
 ------ | -----------------
 1. User clicks next button | 1. Client sends "next" command to jMPD over port.
-2. | 2. Server recieves command packet.
-3. | 3. Server parses command packet, extracts "next" command.
+2. | 2. Server recieves command message.
+3. | 3. Server parses command message, extracts "next" command.
 4. | 4. Server executes command.
 5. | 5. Client sends "info" command to jMPD.
-6. | 6. Server recieves command packet.
-7. | 7. Server parses command packet, extracts "info" command.
+6. | 6. Server recieves command message.
+7. | 7. Server parses command message, extracts "info" command.
 8. | 8. Server sends song info to client.
 9. | 9. Client displays the new song information.
 
@@ -126,12 +126,12 @@ Allows user to skip back to the previous track in the play queue.
 Action | Software Reaction 
 ------ | -----------------
 1. User clicks previous button | 1. Client sends "prev" command to jMPD over port.
-2. | 2. Server recieves command packet.
-3. | 3. Server parses command packet, extracts "prev" command.
+2. | 2. Server recieves command message.
+3. | 3. Server parses command message, extracts "prev" command.
 4. | 4. Server executes command.
 5. | 5. Client sends "info" command to jMPD.
-6. | 6. Server recieves command packet.
-7. | 7. Server parses command packet, extracts "info" command.
+6. | 6. Server recieves command message.
+7. | 7. Server parses command message, extracts "info" command.
 8. | 8. Server sends song info to client.
 9. | 9. Client displays the new song information.
 
@@ -181,8 +181,8 @@ Allows user to end playback and leave the daemon paused at the beginning of the 
 Action | Software Reaction 
 ------ | -----------------
 1. User clicks stop button | 1. Client sends "stop" command to jMPD over port.
-2. | 2. Server recieves command packet.
-3. | 3. Server parses command packet, extracts "stop" command.
+2. | 2. Server recieves command message.
+3. | 3. Server parses command message, extracts "stop" command.
 4. | 4. Server executes command.
 
 **Scenario Notes:**
@@ -232,8 +232,8 @@ Action | Software Reaction
 1. User clicks "daemon" menu bar entry | 1. Client populates and expands the daemon menu.
 2. User points cursor to the "update" item | 2. Client highlights the item with a contrasting background color.
 3. User clicks "update" item | 3. Client sends "update" command to jMPD over port.
-4. | 4. Server recieves command packet.
-5. | 5. Server parses command packet, extracts "update" command.
+4. | 4. Server recieves command message.
+5. | 5. Server parses command message, extracts "update" command.
 6. | 6. Server rescans the configured music directory, returns the new/removed database entries to the client.
 7. | 7. Client updates the library view to reflect the database changes.
 
@@ -267,3 +267,63 @@ None
 **Timing Constraints:**
 
 None
+
+---
+
+**Use Case 6: UserAddsTrackToPlayQueue**
+
+**Overview:**
+
+Allows user to append new tracks to the end of the play queue.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The database is accessible.
+3. The jMPC is connected to jMPD on the same configured port.
+4. User is looking at jMPC_Library_View.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User clicks on a track in the library. | 1. Client highlights the track entry with a contrasting background color.
+2. User presses the 'a' key. | 2. Client sends the "add" command and the track id in an array to the daemon.
+3. | 3. Server recieves command message.
+4. | 4. Server parses command message, extracts "add" command and song id array.
+5. | 5. Server adds specified track to play queue, returns the updated play queue information.
+6. | 6. Client updates the jMPC_Play_Queue_View to reflect the changes.
+
+**Scenario Notes:**
+
+The user is allowed to multi-select tracks in the library. They will be placed into the queue in ascending id order.
+
+**Post Conditions:**
+
+1. The daemon's play queue now contains the user selected tracks.
+2. The client's GUI reflects the changes in the play queue.
+
+**Exceptions:**
+
+1. The database cannot be accessed
+2. The music directory cannot be accessed
+3. The daemon is not running
+4. The client is not connected to the same port as jMPD. 
+
+**Required GUI:**
+
+1. jMPC_Main_View
+2. jMPC_Menu_Bar
+3. jMPC_Menu_Daemon_Entry
+4. jMPC_Library_View
+5. jMPC_Play_Queue_View
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
