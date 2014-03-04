@@ -792,3 +792,111 @@ None
 None
 
 ---
+
+**Use Case 16: UserSavesPlayQueueToPlaylist**
+
+**Overview:**
+
+Allows user to save the current play queue as a playlist.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The database is accessible.
+3. The jMPC is connected to jMPD on the same configured port.
+4. The playlist directory is writable.
+5. The play queue is not empty
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User presses the 's' key. | 1. Client opens a text entry view
+2. User types in a string of characters for the name of the playlist. | 2. Client echos their input in the text entry box.
+3. User presses enter, or clicks the "Done" button | 3. Client sends the "save" command to the daemon along with the user string.
+4. | 4. Server recieves command message.
+5. | 5. Server parses command message, extracts "save" command, and the playlist name string.
+6. | 6. Server creates a new playlist with the current play queue as its track listing.
+7. | 7. Client updates the list of playlists to show the new playlist.
+
+**Scenario Notes:**
+
+The user is allowed to multi-select tracks in the playlist. They will all be removed from the playlist.
+
+**Post Conditions:**
+
+1. The client GUI displays the updated playlist information.
+2. The playlist file no longer contains the deleted entries.
+
+**Exceptions:**
+
+1. The daemon is not running.
+2. The client is not connected to the same port as jMPD.
+3. The playlist directory is not writable.
+
+**Required GUI:**
+
+1. jMPC_Main_View
+2. jMPC_Play_Queue_View
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
+
+**Use Case 17: UserConfiguresDaemonSettings**
+
+**Overview:**
+
+Allows user to configure the jMPD settings.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The config file is writable.
+3. The jMPC is connected to jMPD on the same configured port.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User clicks "daemon" menu bar entry | 1. Client populates and expands the daemon menu.
+2. User points cursor to the "settings" item | 2. Client highlights the item with a contrasting background color.
+3. User clicks "settings" item | 3. Client opens and populates the jMPC_Daemon_Config_View
+4. User clicks one of the textboxes in the config view. | 4. A text cursor begins blinking in the clicked textbox.
+5. User edits the text in the textbox | 5. The client echos the user's edits.
+6. User clicks the "Save" button in the jMPC_Daemon_Config_View | 6. Client writes the changes to the config file.
+
+**Scenario Notes:**
+
+If the "Cancel" button is instead pressed, the config file is left unchanged.
+
+**Post Conditions:**
+
+1. The daemon's configuration file now contains the updated information.
+
+**Exceptions:**
+
+1. The config file is writable.
+
+**Required GUI:**
+
+1. jMPC_Main_View
+2. jMPC_Menu_Bar
+3. jMPC_Menu_Daemon_Entry
+4. jMPC_Daemon_Config_View
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
