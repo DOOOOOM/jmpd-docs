@@ -882,7 +882,7 @@ If the "Cancel" button is instead pressed, the config file is left unchanged.
 
 **Exceptions:**
 
-1. The config file is writable.
+1. The config file is not writable.
 
 **Required GUI:**
 
@@ -890,6 +890,56 @@ If the "Cancel" button is instead pressed, the config file is left unchanged.
 2. jMPC_Menu_Bar
 3. jMPC_Menu_Daemon_Entry
 4. jMPC_Daemon_Config_View
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
+
+**Use Case 18: UserConfiguresClientSettings**
+
+**Overview:**
+
+Allows user to configure the jMPC settings.
+
+**Preconditions:**
+
+1. The client config file is writable.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User clicks "client" menu bar entry | 1. Client populates and expands the client menu.
+2. User points cursor to the "settings" item | 2. Client highlights the item with a contrasting background color.
+3. User clicks "settings" item | 3. Client opens and populates the jMPC_Config_View
+4. User clicks one of the textboxes in the config view. | 4. A text cursor begins blinking in the clicked textbox.
+5. User edits the text in the textbox | 5. The client echos the user's edits.
+6. User clicks the "Save" button in the jMPC_Daemon_Config_View | 6. Client writes the changes to the client's config file.
+
+**Scenario Notes:**
+
+If the "Cancel" button is instead pressed, the config file is left unchanged.
+
+**Post Conditions:**
+
+1. The client's configuration file now contains the updated information.
+
+**Exceptions:**
+
+1. The config file is not writable.
+
+**Required GUI:**
+
+1. jMPC_Main_View
+2. jMPC_Menu_Bar
+3. jMPC_Menu_Client_Entry
+4. jMPC_Config_View
 
 **Use Cases Utilized:**
 
