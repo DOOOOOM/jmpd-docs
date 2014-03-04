@@ -533,7 +533,7 @@ None
 
 **Overview:**
 
-Allows user to lower the the volume.
+Allows user to browse the library.
 
 **Preconditions:**
 
