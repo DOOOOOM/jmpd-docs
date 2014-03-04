@@ -313,10 +313,7 @@ The user is allowed to multi-select tracks in the library. They will be placed i
 **Required GUI:**
 
 1. jMPC_Main_View
-2. jMPC_Menu_Bar
-3. jMPC_Menu_Daemon_Entry
-4. jMPC_Library_View
-5. jMPC_Play_Queue_View
+2. jMPC_Library_View
 
 **Use Cases Utilized:**
 
@@ -327,3 +324,59 @@ None
 None
 
 ---
+
+**Use Case 7: UserRemovesTrackFromPlayQueue**
+
+**Overview:**
+
+Allows user to remove tracks from the play queue.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The database is accessible.
+3. The jMPC is connected to jMPD on the same configured port.
+4. User is looking at jMPC_Play_Queue_View.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User clicks on a track in the play queue. | 1. Client highlights the track entry with a contrasting background color.
+2. User presses the 'r' key. | 2. Client sends the "remove" command and the track id in an array to the daemon.
+3. | 3. Server recieves command message.
+4. | 4. Server parses command message, extracts "remove" command and song id array.
+5. | 5. Server removes specified track from the play queue, returns the updated play queue information.
+6. | 6. Client updates the jMPC_Play_Queue_View to reflect the changes.
+
+**Scenario Notes:**
+
+The user is allowed to multi-select tracks in the library. They will all be removed from the play queue.
+
+**Post Conditions:**
+
+1. The daemon's play queue no longer contains the user selected tracks.
+2. The client's GUI reflects the changes in the play queue.
+
+**Exceptions:**
+
+1. The database cannot be accessed
+2. The music directory cannot be accessed
+3. The daemon is not running
+4. The client is not connected to the same port as jMPD. 
+
+**Required GUI:**
+
+1. jMPC_Main_View
+2. jMPC_Play_Queue_View
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
+
