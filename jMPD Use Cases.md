@@ -52,6 +52,8 @@ None
 
 None
 
+---
+
 **Use Case 2: UserClicksNextTrackButton**
 
 **Overview:**
@@ -105,11 +107,13 @@ None
 
 None
 
+---
+
 **Use Case 3: UserClicksPreviousTrackButton**
 
 **Overview:**
 
-Allows user to skip forward to the previous track in the play queue.
+Allows user to skip back to the previous track in the play queue.
 
 **Preconditions:**
 
@@ -139,6 +143,55 @@ If the jMPD detects that there are no tracks in the play queue, the prev command
 
 1. The daemon is now playing the previous song in the queue.
 2. The client is now displaying the new song information.
+
+**Exceptions:**
+
+1. The database cannot be accessed
+2. The daemon is not running
+3. The client is not connected to the same port as jMPD. 
+
+**Required GUI:**
+
+1. jMPC_Main_View
+
+**Use Cases Utilized:**
+
+None
+
+**Timing Constraints:**
+
+None
+
+---
+
+**Use Case 4: UserClicksStopButton**
+
+**Overview:**
+
+Allows user to end playback and leave the daemon paused at the beginning of the current song.
+
+**Preconditions:**
+
+1. The jMPD is listening on the configured port.
+2. The database is accessible.
+3. The jMPC is connected to jMPD on the same configured port.
+
+**Scenario:**
+
+Action | Software Reaction 
+------ | -----------------
+1. User clicks stop button | 1. Client sends "stop" command to jMPD over port.
+2. | 2. Server recieves command packet.
+3. | 3. Server parses command packet, extracts "stop" command.
+4. | 4. Server executes command.
+
+**Scenario Notes:**
+
+If the jMPD detects that there are no tracks in the play queue, the stop command has no effect. 
+
+**Post Conditions:**
+
+1. The daemon is now paused at the beginning of the current track in the queue.
 
 **Exceptions:**
 
