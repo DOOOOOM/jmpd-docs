@@ -26,4 +26,6 @@ jMPD Jargon Dictionary
 
 **scrobbling**: Users of Last.fm, a music website, can have a record of the music they listen to stored to their online profile. This process is called "scrobbling". Last.fm uses this information to suggest similar artists that may interest the user, notify them of new releases, and nearby concerts.
 
-**track**: A single audio file in the library
+**track**: A single audio file in the library; it could also refer to one element to an ordered list of songs
+
+**lyrics**: a transcript of the words used in a song
