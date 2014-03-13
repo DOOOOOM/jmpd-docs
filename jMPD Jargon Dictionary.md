@@ -26,4 +26,14 @@ jMPD Jargon Dictionary
 
 **scrobbling**: Users of Last.fm, a music website, can have a record of the music they listen to stored to their online profile. This process is called "scrobbling". Last.fm uses this information to suggest similar artists that may interest the user, notify them of new releases, and nearby concerts.
 
-**track**: A single audio file in the library
+**track**: A single audio file in the library; it could also refer to one element to an ordered list of songs
+
+**lyrics**: a transcript of the words used in a song
+
+**ID3 tag**: An ID3 tag is used to embed information in an MP3 file, such as artist name, song title, album, year etc...
+
+**Album art**: refers to the cover picture of an album; it could be embedded into the MP3 file if it has ID3v2 tags. See also _ID3 tag_
+
+**URL**: usually known as web address, is a specific character string that constitutes a reference to a resource. 
+(Example: http://www.cs.gsu.edu/~jbhola/CSc4350/Spring14/project.html)
+
