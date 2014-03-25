@@ -1,0 +1,10 @@
+The choice of the client/server architecture is justified by its flexibility. 
+
+It’s first of all a means to separate the software into independent modules, a client-side module which the user 
+will interface with through a GUI, and a server-side module which will handle the core of tasks to be carried out 
+by the software. This allows isolation of roles and makes the software easier to improve/debug.
+
+The client/server architecture also presents the advantage of being web-ready (one could potentially have 
+the client on any distinct computers, as long as these computers have access to the internet, through which 
+the client and the server would communicate). So with have the choice of using both client and server locally, 
+or allow communication through the web through very minor changes.
