@@ -11,3 +11,17 @@ Use Case 4 UserClicksStopButton: Provides the user with a direct interface for c
 Use Case 5 UserUpdatesDatabase: Provides a seamless interface between the user and the server that enables the user add new audio files to the database without having to restart the client.
 
 Use Case 6 UserAddsTracksToPlayQueue: Allows user expand the list of songs in the current playlist without having stopping the audio playback, thereby offering the user continuous playback time.
+
+Use Case 7: UserRemovesTrackFromPlayQueue: Allows the user the flexibility to adjust the list of playing tracks by removing an item from the list.
+
+Use Case 8: UserClearsPlayQueue: Provides the user the flexibility to re-organize the play queue by eliminating all tracks set to play. Hence a fresh list of track could be generated. 
+
+Use Case 9: UserRaisesVolume: Gives the user the control over the audio level, so the user can listen to play back at a higher volume.
+
+Use Case 10: UserLowersVolume: Gives the user the control over the audio level, so the user can listen to play back at a lower volume.
+
+Use Case 11: UserBrowsesLibrary: this feature enables the user look through the available list of track on the daemon in order to make a selection.
+
+Use Case 12: UserCreatesNewPlaylist: this feature allows the user create a custom selection of track which could be added to the play queue. This provides the flexibility to the user to listen to their own list of track/songs.
+
+Use Case 13: UserDeletesPlaylist: this feature gives the user control over the list of available playlist. The user can delete old or unwanted playlist.
