@@ -1,0 +1,37 @@
+                                                        jMPD Use Case Rationale
+
+Use Case 1 UserClickesTogglePlaybackButton: Provides the user with a direct interface for communicating with the server.  This action serves a dual purpose, enabling the user start a playback of an audio file as well as pause an on-going playback.
+
+Use Case 2 UserClicksNextTrackButton: Provides the user with a direct interface for communicating with the server.  This action enables the user skip forward through tracks, allowing for easy access to difference tracks in a non-sequential manner.
+
+Use Case 3 UserClicksPreviousTrackButton: Provides the user with a direct interface for communicating with the server. This action enables the user skip backward through tracks, allowing for easy access to difference tracks in a non-sequential manner.
+
+Use Case 4 UserClicksStopButton: Provides the user with a direct interface for communicating with the server. This action enable to user halt current playback, leaving the client in a state where playback may resume from the beginning of the stopped track.
+
+Use Case 5 UserUpdatesDatabase: Provides a seamless interface between the user and the server that enables the user add new audio files to the database without having to restart the client.
+
+Use Case 6 UserAddsTracksToPlayQueue: Allows user expand the list of songs in the current playlist without having stopping the audio playback, thereby offering the user continuous playback time.
+
+Use Case 7: UserRemovesTrackFromPlayQueue: Allows the user the flexibility to adjust the list of playing tracks by removing an item from the list.
+
+Use Case 8: UserClearsPlayQueue: Provides the user the flexibility to re-organize the play queue by eliminating all tracks set to play. Hence a fresh list of track could be generated. 
+
+Use Case 9: UserRaisesVolume: Gives the user the control over the audio level, so the user can listen to play back at a higher volume.
+
+Use Case 10: UserLowersVolume: Gives the user the control over the audio level, so the user can listen to play back at a lower volume.
+
+Use Case 11: UserBrowsesLibrary: this feature enables the user look through the available list of track on the daemon in order to make a selection.
+
+Use Case 12: UserCreatesNewPlaylist: this feature allows the user create a custom selection of track which could be added to the play queue. This provides the flexibility to the user to listen to their own list of track/songs.
+
+Use Case 13: UserDeletesPlaylist: this feature gives the user control over the list of available playlist. The user can delete old or unwanted playlist.
+
+Use Case 14: UserAddsToPlaylist: Provides the user the flexibility to edit an existing playlist to further customize the list track on the selected playlist by extending the list.
+
+Use Case 15: UserRemovesFromPlaylist: Provide the user the flexibility to edit an existing playlist to further customize the list track on the selected playlist by reducing the list.
+
+Use Case 16: UserSavesPlayQueueToPlaylist: This feature allows the user convert the currently playing list of track into a custom playlist to be added to the group of playlist. This provides the user with a mix of different track to play.
+
+Use Case 17: UserConfiguresDaemonSettings: this feature gives the user control over the Daemon behavior by configuring the Daemon settings.
+
+Use Case 18: UserConfiguresClientSettings: this feature gives the user control over the Client behavior by configuring the Client settings
