@@ -37,3 +37,6 @@ jMPD Jargon Dictionary
 **URL**: usually known as web address, is a specific character string that constitutes a reference to a resource. 
 (Example: http://www.cs.gsu.edu/~jbhola/CSc4350/Spring14/project.html)
 
+**UDP**: (User Datagram Protocol)a simple connection protocol that allows transmission of packets between client and server (see protocol)
+
+**protocol**: a system of rules that govern the exchange of information between or within computers
