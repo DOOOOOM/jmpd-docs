@@ -3,6 +3,36 @@ Command Protocol
 
 **Requests**
 
+Command		Arguments				Return
+
+TOGGLE		""					
+PLAY		""					
+PAUSE		""					
+STOP		""					
+NEXT		""					
+PREV		""					
+SEEK		"time":"123.456"			
+DATABASE	""					
+ADD		"ids":["1",...]				
+UPDATE		""					
+REMOVE		"ids":["1",...]				
+INFO		""					trackinfo
+QUEUE		""					
+PLADD		"playlist_name":"...","ids":["1",...]	
+PLDEL		"playlist_name":"...","ids":["1",...]	
+
+All commands return at least the following:
+
+"status_code":"..."
+"status_message":"..."
+
+Additionally, anything marked with trackinfo will return the following:
+
+track id			"track_id":"1"
+elapsed time in seconds 	"time":"123.456"
+playback state	(boolean)	"state":"true"
+
+
 **Status Codes**
 These status codes are sent to the client in response to a request
 
