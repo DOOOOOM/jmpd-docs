@@ -1,20 +1,14 @@
 Database Class
-This class will serve as a capsule handle functionalities related to database manipulation (accessing, adding, modifying and removing records, creating new tables etc.) as well as attributes of the database(s) that will be used throughout program execution.	
+This class will serve as a capsule to handle functionalities related to database manipulation (accessing, adding, modifying and removing records, creating new tables etc.) as well as attributes of the database(s) that will be used throughout program execution.	
 
 FileSystemScanner Class
 This class will take care of functionalities that will allow us to scan some specific directories, looking for configurations files, playlists, music files, or changes made to the default directory where the music is stored.	
-
-Listener Class
-This is the module of the server that will allow to watch for any message from the client to carry out actions on the server-side of the application.	
 
 MetadataExtractor Class
 In this class, we will define functionalities that will allow the server to extract information from the ID3 tags(see jargon dictionary) inside the mp3 files that will be manipulated in the music library. It will help retrieve such information as song name, artist name, duration etc. for any given mp3 file.
 
 Parser Class
 This class will store attributes about the “messages” that will sent by the client to the server. It will handle functionalities such as decoding the message and any parameters or restrictions associated with it.	
-
-PlayQueue Class
-This class will encapsulate attributes of the playqueue at any given time during program execution, allow for functionalities such as track insertion, track deletion, track order modification to take place when requested by the client.	
 
 Player Class
 In this class we will define functionalities that will allow playback of the songs in the application (play, pause, next rack, previous track etc.)	
@@ -30,12 +24,6 @@ In this class will be defined functionalities to help retrieve the album art of 
 
 Connection Class
 This class will define procedures that will allow the communication between the client module and the server module of the application, such as specifying the host address, port number to use etc.
-
-LyricsFetcher Class
-The purpose of this class is to look for the lyrics (see jargon dictionary) on the web, given the artist name and song name.	
-
-LyricsPanel Class	
-The functionalities in this class will define a collaboration with the LyricsFetcher class to help display the fetched lyrics to the GUI.
 
 MainPanel Class
 This class will encapsulate the elements of the major part of the client’s GUI. Information such as the artist name of the song in playback, title of the song in playback and any other song label will be displayed through that construct.
