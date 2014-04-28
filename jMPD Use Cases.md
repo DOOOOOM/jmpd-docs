@@ -342,16 +342,15 @@ Allows user to remove tracks from the play queue.
 
 Action | Software Reaction 
 ------ | -----------------
-1. User clicks on a track in the play queue. | 1. Client highlights the track entry with a contrasting background color.
-2. User presses the 'r' key. | 2. Client sends the "remove" command and the track id in an array to the daemon.
+1. User clicks on a track in the play queue tab. | 1. Client highlights the track entry with a contrasting background color.
+2. User presses double clicks a song in the playqueue. | 2. Client sends the "delete" command and the track id in a json object to the daemon.
 3. | 3. Server recieves command message.
-4. | 4. Server parses command message, extracts "remove" command and song id array.
+4. | 4. Server parses command message, extracts "delete" command and track id.
 5. | 5. Server removes specified track from the play queue, returns the updated play queue information.
 6. | 6. Client updates the jMPC_Play_Queue_View to reflect the changes.
 
 **Scenario Notes:**
-
-The user is allowed to multi-select tracks in the library. They will all be removed from the play queue.
+none
 
 **Post Conditions:**
 
@@ -367,8 +366,8 @@ The user is allowed to multi-select tracks in the library. They will all be remo
 
 **Required GUI:**
 
-1. jMPC_Main_View
-2. jMPC_Play_Queue_View
+1. MainViewController
+
 
 **Use Cases Utilized:**
 
