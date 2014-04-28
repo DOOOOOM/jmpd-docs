@@ -431,105 +431,8 @@ None
 
 ---
 
-**Use Case 9: UserRaisesVolume**
 
-**Overview:**
-
-Allows user to raise the the volume.
-
-**Preconditions:**
-
-1. The jMPD is listening on the configured port.
-2. The jMPC is connected to jMPD on the same configured port.
-
-**Scenario:**
-
-Action | Software Reaction 
------- | -----------------
-1. User presses the '+' key | 1. Client sends the "raise" command to the daemon.
-2. | 2. Server recieves command message.
-3. | 3. Server parses command message, extracts "raise" command.
-4. | 4. Server raises its output volume.
-5. | 5. The client updates the displayed volume in the jMPC_Main_View
-
-**Scenario Notes:**
-
-If the volume is currently at 100%, the client will not send the message.
-
-**Post Conditions:**
-
-1. The daemon's volume level is raised.
-2. The client's GUI reflects the changes to the volume level.
-
-**Exceptions:**
-
-1. The daemon is not running
-2. The client is not connected to the same port as jMPD. 
-
-**Required GUI:**
-
-1. jMPC_Main_View
-
-**Use Cases Utilized:**
-
-None
-
-**Timing Constraints:**
-
-None
-
----
-
-**Use Case 10: UserLowersVolume**
-
-**Overview:**
-
-Allows user to lower the the volume.
-
-**Preconditions:**
-
-1. The jMPD is listening on the configured port.
-2. The jMPC is connected to jMPD on the same configured port.
-
-**Scenario:**
-
-Action | Software Reaction 
------- | -----------------
-1. User presses the '-' key | 1. Client sends the "lower" command to the daemon.
-2. | 2. Server recieves command message.
-3. | 3. Server parses command message, extracts "lower" command.
-4. | 4. Server lowers its output volume.
-5. | 5. The client updates the displayed volume in the jMPC_Main_View
-
-**Scenario Notes:**
-
-If the volume is currently at 0%, the client will not send the message.
-
-**Post Conditions:**
-
-1. The daemon's volume level is lowered.
-2. The client's GUI reflects the changes to the volume level.
-
-**Exceptions:**
-
-1. The daemon is not running
-2. The client is not connected to the same port as jMPD. 
-
-**Required GUI:**
-
-1. jMPC_Main_View
-
-**Use Cases Utilized:**
-
-None
-
-**Timing Constraints:**
-
-None
-
----
-
-**Use Case 11: UserBrowsesLibrary**
+**Use Case 9: UserBrowsesLibrary**
 
 **Overview:**
 
@@ -545,16 +448,15 @@ Allows user to browse the library.
 
 Action | Software Reaction 
 ------ | -----------------
-1. User clicks on an artist name in the library view. | 1. Client highlights the artist entry with a contrasting background color, and loads that artist's albums in the album pane.
-2. User clicks on an album name in the library pane. | 2. Client highlights the album entry with a contrasting background color, and loads that album's list of tracks in the song pane.
+1. User clicks on an artist name in the library view. | 1. Client highlights the artist entry with a contrasting background color, and loads that artist's albums in the album pane. And Shows all songs by that artist in the tracks pane.
+2. User clicks on an album name in the library pane. | 2. Client highlights the album entry with a contrasting background color, and loads just that album's list of tracks in the song pane.
 
 **Scenario Notes:**
 
 None
 
 **Post Conditions:**
-
-1. The client GUI displays the information requested by the user.
+1. The client GUI displays the information requested by the user sorted alphabetically and by track number.
 
 **Exceptions:**
 
@@ -563,8 +465,7 @@ None
 
 **Required GUI:**
 
-1. jMPC_Main_View
-2. jMPC_Library_View
+1. MainViewController
 
 **Use Cases Utilized:**
 
@@ -576,7 +477,7 @@ None
 
 ---
 
-**Use Case 12: UserCreatesNewPlaylist**
+**Use Case 10: UserCreatesNewPlaylist**
 
 **Overview:**
 
@@ -630,7 +531,7 @@ None
 
 ---
 
-**Use Case 13: UserDeletesPlaylist**
+**Use Case 11: UserDeletesPlaylist**
 
 **Overview:**
 
@@ -683,7 +584,7 @@ None
 
 ---
 
-**Use Case 14: UserAddsToPlaylist**
+**Use Case 12: UserAddsToPlaylist**
 
 **Overview:**
 
@@ -738,7 +639,7 @@ None
 
 ---
 
-**Use Case 15: UserRemovesFromPlaylist**
+**Use Case 13: UserRemovesFromPlaylist**
 
 **Overview:**
 
@@ -793,7 +694,7 @@ None
 
 ---
 
-**Use Case 16: UserSavesPlayQueueToPlaylist**
+**Use Case 14: UserSavesPlayQueueToPlaylist**
 
 **Overview:**
 
@@ -849,7 +750,7 @@ None
 
 ---
 
-**Use Case 17: UserConfiguresDaemonSettings**
+**Use Case 15: UserConfiguresDaemonSettings**
 
 **Overview:**
 
@@ -901,7 +802,7 @@ None
 
 ---
 
-**Use Case 18: UserConfiguresClientSettings**
+**Use Case 16: UserConfiguresClientSettings**
 
 **Overview:**
 
