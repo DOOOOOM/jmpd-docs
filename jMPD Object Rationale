@@ -16,9 +16,6 @@ This class will handle the configuration file and all the commands to the daemon
 Player Class
 In this class we will define functionalities that will allow playback of the songs in the application (play, pause, next rack, previous track etc.)	
 
-Playlist Class
-This class will encapsulate attributes of any given playlist which will be the songs that it contains, as well as the order in which they appear in the list.	
-
 Track Class
 This class will encapsulate information about database elements such as the track ID associated with each song in the database, or the metadata of the track as defined in the database specification.
 
@@ -39,6 +36,3 @@ This class will define procedures that will allow the communication between the 
 
 MainViewController Class
 This class will encapsulate the elements of the major part of the client’s GUI. Information such as the artist name of the song in playback, title of the song in playback and any other song label will be displayed through that construct.
-
-Message Class
-This class will define the format of the object that will be send as communication tools between the client and the server.
